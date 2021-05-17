@@ -1,5 +1,4 @@
 class Bmi_Calculator:
-    pass
     def setdata(self, weight, height):
         self.weight = weight
         self.height = height
