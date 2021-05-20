@@ -33,9 +33,13 @@ class Contacts(object):
                     if i.name == del_name:
                         del ls[i]
 
-    
-
-
+            elif menu == '4':
+                edit_name = input('이름을 입력하세요: ')
+                edit_info = Contacts(edit_name,input('수정 전화번호'), input('수정 이메일'), input('수정 주소'))
+                for i,j in enumerate(ls):
+                    if j.name == edit_name:
+                        del ls[i]
+                        ls.append(edit_info)
             else:
                 print('숫자를 다시 입력하세요')
                 continue
@@ -43,4 +47,6 @@ class Contacts(object):
 
 
 Contacts.main()
+
+
 
