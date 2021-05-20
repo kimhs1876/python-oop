@@ -12,7 +12,6 @@ class Grade(object):
 
     def get_grade(self):
         score = int(self.avg())
-        grade = ''
         if score >= 90:
             grade = 'A학점'
         elif score >= 80:
@@ -33,5 +32,5 @@ class Grade(object):
         print(f'평균:{g.avg()}')
         print(f'학점:{g.get_grade()}')
 
-Grade.main()
+Grade.main() # 라이브러리 개념
 
