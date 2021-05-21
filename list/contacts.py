@@ -9,7 +9,11 @@ class Contacts(object):
         return f'주소록: 이름 {self.name}, 전화번호 {self.phone}, 이메일 {self.email}, 주소 {self.addr}'
 
 
-
+    @staticmethod
+    def del_element(ls, name):
+        for i, j in enumerate(ls):
+            if j.name == name:
+                del ls[i]
 
     @staticmethod
     def main():
@@ -28,18 +32,15 @@ class Contacts(object):
                     print(i.get_contacts())
 
             elif menu == '3':
-                del_name = input('삭제할 이름 :')
-                for i,j in enumerate(ls):
-                    if i.name == del_name:
-                        del ls[i]
+                edit_name = input('이름을 입력하세요: ')
+                edit_info = Contacts(input('수정 전화번호'), input('수정 이메일'), input('수정 주소'), edit_name)
+                edit_name.del_element(ls, name)
+                ls.append(edit_info)
 
             elif menu == '4':
-                edit_name = input('이름을 입력하세요: ')
-                edit_info = Contacts(edit_name,input('수정 전화번호'), input('수정 이메일'), input('수정 주소'))
-                for i,j in enumerate(ls):
-                    if j.name == edit_name:
-                        del ls[i]
-                        ls.append(edit_info)
+                del_name = input(ls, '삭제할 이름 :')
+                edit_name.del_element(ls, name.)
+
             else:
                 print('숫자를 다시 입력하세요')
                 continue

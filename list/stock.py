@@ -3,20 +3,36 @@ class Stock(object):
         self.name = name
         self.code = code
 
-    def get_stockinfo(self):
-        return f' 주식: 이름 {self.name}, 코드 {self.code}'
+    def to_string(self):
+        return f' 종목이름 {self.name}, 종목코드 {self.code}'
+
+    @staticmethod
+    def del_element(ls, code):
+        for i, j in enumerate(ls):
+            if j.code == code:
+                del ls[i]
 
     @staticmethod
     def main():
+        ls =[]
         while 1:
-            menu = input('0.종료, 1.입력, 2.출력')
+            menu = input('0.Exit, 1.Create, 2.Read 3.Update 4.Delete')
             if menu == '0':
                 print('프로그램을 종료합니다')
                 break
             elif menu == '1':
-                s = Stock(input('이름'), input('코드'))
+                ls.append(Stock(input('name'), input('code')))
             elif menu == '2':
-                print(f'출력결과: {s.get_stockinfo()}')
+                for i in ls:
+                    print(i.to_string())
+            elif menu == '3':
+                code = input("종목코드")
+                stock = Stock(input('수정할 이름'), code)
+                stock.del_element(ls, code)
+                ls.append(Stock)
+            elif menu == '4':
+                stock = Stock(None, input('종목코드'))
+                stock.del_element(ls, stock.code)
             else:
                 print('숫자를 다시 입력하세요')
                 continue
