@@ -5,49 +5,39 @@ class Contacts(object):
         self.email = email
         self.addr = addr
 
-    def get_contacts(self):
-        return f'주소록: 이름 {self.name}, 전화번호 {self.phone}, 이메일 {self.email}, 주소 {self.addr}'
-
+    def get_contact(self):
+        return f'이름{self.name},핸드폰{self.phone},이메일{self.email},주소{self.addr}'
 
     @staticmethod
-    def del_element(ls, name):
-        for i, j in enumerate(ls):
+    def del_name(list, name):
+        for i, j in enumerate(list):
             if j.name == name:
-                del ls[i]
+                del list[i]
 
     @staticmethod
     def main():
-        ls = []
-        while 1:
-            menu = input('0.종료, 1.입력, 2.출력 3.삭제')
-            if menu == '0':
-                print('종료........')
-                break
-            elif menu == '1':
-                c = Contacts(input('이름'), input('전화번호'), input('이메일'),input('주소'))
-                ls.append(c)
-
-            elif menu == '2':
-                for i in ls:
-                    print(i.get_contacts())
-
-            elif menu == '3':
-                edit_name = input('이름을 입력하세요: ')
-                edit_info = Contacts(input('수정 전화번호'), input('수정 이메일'), input('수정 주소'), edit_name)
-                edit_name.del_element(ls, name)
-                ls.append(edit_info)
-
-            elif menu == '4':
-                del_name = input(ls, '삭제할 이름 :')
-                edit_name.del_element(ls, name.)
-
-            else:
-                print('숫자를 다시 입력하세요')
-                continue
-
-
+        list = []
+    while 1:
+        menu = input('0.종료 1.생성 2.조회 3.수정 4.삭제')
+        if menu == '0':
+            print('프로그램을 종료합니다.')
+            break
+        elif menu == '1':
+            list.append(Contacts(input('이름'), input('전화번호'), input('이메일'), input('주소'))) # Contacts의 에러 발생원인을 모르겠음
+        elif menu == '2':
+            for i in list:
+                print(f'출력결과 : {i.get_contact()}')
+        elif menu == '3':
+            name = input('이름')
+            del_name = input('삭제할 이름:')
+            edit_info.del_name(list, name)
+        elif menu == '4':
+            edit_name = input('수정할 이름:')
+            edit_info = Contacts(input('이름'), input('전화번호'), input('이메일'), input('주소'))
+            edit_info.del_name(list, name)
+            list.append(edit_info)
+        else:
+            print('숫자를 다시 입력하세요')
+            continue
 
 Contacts.main()
-
-
-
