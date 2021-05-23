@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c3937bd-9cf4-4380-9e23-93e91f18bfb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/practice_contacts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_stock.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/practice_stock.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
